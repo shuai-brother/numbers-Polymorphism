@@ -1,4 +1,4 @@
-#ifndef NUMBERRRRRRRS_H
+fndef NUMBERRRRRRRS_H
 #define NUMBERRRRRRRS_H
 
 #include<cstdio>
@@ -8,21 +8,19 @@ using namespace std;
 
 class AbstractNumber{
 	public:
-		AbstractNumber(double =0,double =0){}
-		~AbstractNumber(){}
 		virtual void print(){}
-		virtual AbstractNumber add(const AbstractNumber& other){AbstractNumber AA;return AA;}
-		virtual AbstractNumber mul(const AbstractNumber& other){AbstractNumber AA;return AA;}
+		virtual AbstractNumber add(const AbstractNumber& other){return *this;}
+		virtual AbstractNumber mul(const AbstractNumber& other){return *this;}
 };
 
 class RealNumber: public AbstractNumber{
 	private:
 		double a;
 	public:
-		RealNumber();
+		RealNumber(double =0);
 		~RealNumber();
-		AbstractNumber add(const AbstractNumber& other);
-		AbstractNumber mul(const AbstractNumber& other);
+		RealNumber add(const RealNumber& other);
+		RealNumber mul(const RealNumber& other);
 		void print();
 };
 
@@ -30,10 +28,10 @@ class IntegerNumber: public RealNumber{
 	private:
 		int b;
 	public:
-		IntegerNumber();
+		IntegerNumber(int =0);
 		~IntegerNumber();
-		AbstractNumber add(const AbstractNumber& other);
-		AbstractNumber mul(const AbstractNumber& other);
+		IntegerNumber add(const IntegerNumber& other);
+		IntegerNumber mul(const IntegerNumber& other);
 		void print();
 };
 
@@ -41,10 +39,10 @@ class ComplexNumber: public AbstractNumber{
 	private:
 		double real,comp;
 	public:
-		ComplexNumber();
+		ComplexNumber(double =0,double =0);
 		~ComplexNumber();
-		AbstractNumber add(const AbstractNumber& other);
-		AbstractNumber mul(const AbstractNumber& other);
+		ComplexNumber add(const ComplexNumber& other);
+		ComplexNumber mul(const ComplexNumber& other);
 		void print();
 };
 

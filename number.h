@@ -1,4 +1,4 @@
-fndef NUMBERRRRRRRS_H
+#ifndef NUMBERRRRRRRS_H
 #define NUMBERRRRRRRS_H
 
 #include<cstdio>

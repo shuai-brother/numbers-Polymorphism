@@ -1,4 +1,4 @@
-nclude<cstdio>
+#include<cstdio>
 #include<iostream>
 #include "number.h"
 
